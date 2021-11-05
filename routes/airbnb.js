@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
 
 
 router.get('/send', (req,res)=>{
-  mongoQueries.findListing(res);
+  let CRITERIA = {bedrooms:{$gte:3}, number_of_reviews:{$GTE:5}}
+  mongoQueries.findListing(res, criteria);
 })
 
 
