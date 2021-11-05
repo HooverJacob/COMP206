@@ -44,7 +44,7 @@ async function findListing3(response)
   mongoClient.connect()
     .then(connection=>connection.db('sample_airbnb'))
     .then(db=>db.collection('listingsAndReviews'))
-    .then(listingsAndReviews=>listingsAndReviews.findOne())
+    .then(listingsAndReviews=>listingsAndReviews.findOne({bedrooms:2}))
     .then(listing=>response.send(listing))
     .catch(error => console.log(error))
 
