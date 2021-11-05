@@ -6,7 +6,7 @@ async function findListing1(response)
   let connection = await mongoClient.connect()
   console.log('Connected');
   let db = await connection.db('sample_airbnb');
-  console.log('open airbnb databse')
+  console.log('open airbnb database')
 
   let listingsAndReviews = await db.collection('listingsAndReviews')
   console.log('select listings and reviews')
@@ -41,6 +41,7 @@ async function findListing2 (response)
 
 async function findListing3(response, criteria)
 {
+  console.log("searching for : ",criteria)
   mongoClient.connect()
     .then(connection=>connection.db('sample_airbnb'))
     .then(db=>db.collection('listingsAndReviews'))
